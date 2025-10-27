@@ -76,9 +76,9 @@ def etiqueta(preco_atual, preco_justo, mos=0.20):
     if (preco_atual is None) or (preco_justo is None) or np.isnan(preco_justo) or preco_justo <= 0:
         return "Sem dados"
     rel = float(preco_atual) / float(preco_justo)
-    if rel <= (1 - mos): return "Barata"
-    if rel <= (1 + mos): return "Justa"
-    return "Cara"
+    if rel <= (1 - mos): return "🟢 Barata"
+    if rel <= (1 + mos): return "🟡 Justa"
+    return "🔴 Cara"
 
 def analyze(tk):
     t = yf.Ticker(tk)
